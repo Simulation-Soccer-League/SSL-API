@@ -278,9 +278,9 @@ function(){
 #* @param username Forum username
 #* 
 function(username) {
-  ## Get the timestamp for the start of the current week in US/Pacific time
+  ## Get the timestamp for the start of the current week in America/Los_Angeles time
   weekStart <- lubridate::now() %>% 
-    with_tz("US/Pacific") %>% 
+    with_tz("America/Los_Angeles") %>% 
     floor_date("week", week_start = "Monday") %>% 
     as.numeric()
   
@@ -356,7 +356,7 @@ return(tasks)
 function(username) {
   ## Gets date of the start of the week in Pacific
   weekStart <- lubridate::now() %>% 
-    with_tz("US/Pacific") %>% 
+    with_tz("America/Los_Angeles") %>% 
     floor_date("week", week_start = "Monday") %>% 
     as.numeric()
   
@@ -492,6 +492,6 @@ function(name) {
     mutate(
       Time = Time |>
         as.numeric() |>
-        as_datetime(tz = "US/Pacific")
+        as_datetime(tz = "America/Los_Angeles")
     )
 }

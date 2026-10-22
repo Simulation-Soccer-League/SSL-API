@@ -47,7 +47,7 @@ function(name){
     name = name
   ) %>% 
     mutate(
-      Time = Time %>% as.numeric() %>% as_datetime(tz = "US/Pacific") %>% as_date(),
+      Time = Time %>% as.numeric() %>% as_datetime(tz = "America/Los_Angeles") %>% as_date(),
       Transaction = paste0("$", comma(Transaction))
     )
 }
